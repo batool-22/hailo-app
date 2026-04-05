@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/Nbo6y/Downloads/hailo-website-v7_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAILO — Hospitality AI Live Operations</title>
+<link href="./HAILO — Hospitality AI Live Operations_files/css2" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#050607;color:#e8e6e0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,6,7,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,.03)}
+.nl{font-family:'EB Garamond',serif;font-size:20px;font-weight:800;color:#C9A84C;letter-spacing:6px;text-decoration:none}
+.nr{display:flex;align-items:center;gap:28px}
+.nr a{font-size:10px;font-weight:600;color:rgba(255,255,255,.2);text-decoration:none;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s}
+.nr a:hover{color:#C9A84C}
+.nr .ct{color:#050607;background:#C9A84C;padding:8px 20px;border-radius:3px}
+.nr .ct:hover{background:#d4b35c;color:#050607}
+
+/* HERO */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 48px;position:relative}
+.hero-g{position:absolute;top:35%;left:50%;width:900px;height:700px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(201,168,76,.02),transparent 50%);pointer-events:none}
+.hero h1{font-family:'EB Garamond',serif;font-size:62px;font-weight:500;line-height:1.1;max-width:880px;position:relative;z-index:2}
+.hero h1 em{font-style:italic;color:#C9A84C}
+.hero h1 .ln{display:block;opacity:0;transform:translateY(28px);animation:li .8s forwards}
+.hero h1 .ln:nth-child(2){animation-delay:.15s}
+.hero h1 .ln:nth-child(3){animation-delay:.3s}
+.hero h1 .ln:nth-child(4){animation-delay:.45s}
+@keyframes li{to{opacity:1;transform:none}}
+.hero-sub{margin-top:40px;font-size:13px;color:rgba(255,255,255,.15);letter-spacing:1px;font-weight:400;position:relative;z-index:2;opacity:0;animation:fi .6s .6s forwards}
+.hero-cta{margin-top:36px;position:relative;z-index:2;opacity:0;animation:fi .6s .8s forwards}
+.hero-cta a{display:inline-block;border:1px solid rgba(201,168,76,.2);color:#C9A84C;padding:12px 40px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .3s}
+.hero-cta a:hover{background:#C9A84C;color:#050607;border-color:#C9A84C}
+@keyframes fi{to{opacity:1}}
+.scr{position:absolute;bottom:36px;left:50%;width:1px;height:44px;background:linear-gradient(to bottom,rgba(201,168,76,.15),transparent);animation:sp 2s infinite}
+@keyframes sp{0%,100%{opacity:.2;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
+
+/* DIVIDER */
+.dv{height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.08),transparent)}
+
+/* FULL STATEMENTS */
+.stmt{padding:0 48px;min-height:80vh;display:flex;align-items:center;justify-content:center}
+.stmt-t{font-family:'EB Garamond',serif;font-size:48px;font-weight:500;line-height:1.18;max-width:760px;text-align:center;letter-spacing:-.5px}
+.stmt-t em{font-style:italic;color:#C9A84C}
+
+/* EXPANDABLE DISCONNECT */
+.disc{padding:120px 48px;max-width:1060px;margin:0 auto}
+.disc-hdr{margin-bottom:56px}
+.disc-sl{font-size:10px;font-weight:600;color:rgba(201,168,76,.45);letter-spacing:4px;text-transform:uppercase;margin-bottom:16px}
+.disc-h{font-family:'EB Garamond',serif;font-size:40px;font-weight:500;line-height:1.2}
+.ex-item{border-top:1px solid rgba(255,255,255,.03)}
+.ex-item:last-child{border-bottom:1px solid rgba(255,255,255,.03)}
+.ex-tr{display:flex;align-items:center;padding:28px 0;cursor:pointer;transition:all .3s;gap:24px}
+.ex-tr:hover .ex-t{color:#e8e6e0}
+.ex-tr:hover .ex-a{color:#C9A84C}
+.ex-l{font-size:10px;font-weight:600;color:rgba(201,168,76,.4);letter-spacing:2px;text-transform:uppercase;width:160px;flex-shrink:0;transition:color .3s}
+.ex-item:hover .ex-l,.ex-item.open .ex-l{color:#C9A84C}
+.ex-t{font-family:'EB Garamond',serif;font-size:24px;font-weight:500;color:rgba(255,255,255,.4);flex:1;line-height:1.3;transition:color .3s}
+.ex-item.open .ex-t{color:#e8e6e0}
+.ex-a{font-size:16px;color:rgba(255,255,255,.1);flex-shrink:0;transition:all .3s}
+.ex-item.open .ex-a{transform:rotate(45deg);color:#C9A84C}
+.ex-bd{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,1,.36,1),padding .4s}
+.ex-item.open .ex-bd{max-height:120px;padding-bottom:20px}
+.ex-txt{font-size:13px;color:rgba(255,255,255,.2);line-height:1.8;padding-left:184px;max-width:640px}
+
+/* ORBITAL */
+.orb-sec{padding:140px 48px;text-align:center;overflow:hidden}
+.orb-sec .disc-sl{text-align:center}
+.orb-sec h2{font-family:'EB Garamond',serif;font-size:40px;font-weight:500;line-height:1.2;max-width:560px;margin:0 auto 60px}
+.ow{position:relative;width:560px;height:560px;margin:0 auto}
+.oc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
+.oci{width:88px;height:88px;border-radius:50%;background:rgba(201,168,76,.035);border:1px solid rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center}
+.oci span{font-family:'EB Garamond',serif;font-size:14px;font-weight:800;color:#C9A84C;letter-spacing:4px}
+.rg{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(201,168,76,.02);transform:translate(-50%,-50%)}
+.r1{width:220px;height:220px}.r2{width:360px;height:360px}.r3{width:490px;height:490px}
+.nd{position:absolute;z-index:4;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:default;transition:transform .3s}
+.nd:hover{transform:scale(1.06)}
+.nd-c{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;letter-spacing:.8px;border:1px solid rgba(201,168,76,.06);background:rgba(201,168,76,.02);color:rgba(201,168,76,.4);transition:all .3s;text-transform:uppercase}
+.nd:hover .nd-c{border-color:rgba(201,168,76,.2);color:#C9A84C;background:rgba(201,168,76,.04)}
+.nd-l{font-size:9px;color:rgba(255,255,255,.15);font-weight:500;text-align:center;max-width:70px;line-height:1.3;letter-spacing:.3px;transition:color .3s}
+.nd:hover .nd-l{color:rgba(255,255,255,.45)}
+.ol{position:absolute;top:50%;left:50%;height:1px;transform-origin:left center;z-index:1}
+.oli{width:100%;height:100%;background:linear-gradient(to right,rgba(201,168,76,.05),transparent)}
+.pt{position:absolute;width:2px;height:2px;border-radius:50%;background:#C9A84C;opacity:0;z-index:2}
+
+/* OUTCOMES */
+.out{padding:120px 48px;max-width:1060px;margin:0 auto}
+.out .disc-sl{margin-bottom:16px}
+.out h2{font-family:'EB Garamond',serif;font-size:40px;font-weight:500;line-height:1.2;margin-bottom:52px;max-width:480px}
+.out-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.out-i{padding:24px 20px;border-top:1px solid rgba(255,255,255,.025);display:flex;gap:16px;align-items:flex-start;transition:background .3s}
+.out-i:hover{background:rgba(201,168,76,.01)}
+.out-d{width:5px;height:5px;border-radius:50%;background:rgba(201,168,76,.35);flex-shrink:0;margin-top:7px}
+.out-i:hover .out-d{background:#C9A84C}
+.out-h{font-family:'EB Garamond',serif;font-size:19px;font-weight:500;color:rgba(255,255,255,.55);line-height:1.3;transition:color .3s}
+.out-i:hover .out-h{color:#e8e6e0}
+.out-p{font-size:11.5px;color:rgba(255,255,255,.15);line-height:1.6;margin-top:4px}
+
+/* NUMBERS */
+.nums{padding:56px 48px;border-top:1px solid rgba(201,168,76,.025);border-bottom:1px solid rgba(201,168,76,.025)}
+.nums-i{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between}
+.nm-i{text-align:center;flex:1}
+.nm-v{font-family:'EB Garamond',serif;font-size:48px;font-weight:500;color:#C9A84C;line-height:1}
+.nm-l{font-size:10px;color:rgba(255,255,255,.12);margin-top:6px;font-weight:500;letter-spacing:.3px}
+
+/* FOUNDER */
+.fnd{padding:140px 48px;max-width:1060px;margin:0 auto}
+.fnd-g{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start}
+.fc{border:1px solid rgba(201,168,76,.04);border-radius:12px;padding:40px 24px;text-align:center;background:rgba(201,168,76,.01)}
+.fav{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#8a6f30);display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-size:26px;font-weight:700;color:#050607;margin:0 auto 14px}
+.fnm{font-family:'EB Garamond',serif;font-size:20px;font-weight:600;margin-bottom:2px}
+.frl{font-size:10px;color:rgba(201,168,76,.5);font-weight:600;letter-spacing:1px;margin-bottom:14px}
+.fbi{font-size:11px;color:rgba(255,255,255,.15);line-height:1.7}
+.ft{padding-top:4px}
+.ft .disc-sl{margin-bottom:16px}
+.ft h2{font-family:'EB Garamond',serif;font-size:34px;font-weight:500;line-height:1.25;margin-bottom:20px}
+.ft p{font-size:13.5px;color:rgba(255,255,255,.2);line-height:1.9;margin-bottom:12px}
+.fq{border-left:2px solid rgba(201,168,76,.25);padding:16px 22px;margin-top:24px;background:rgba(201,168,76,.01);border-radius:0 6px 6px 0}
+.fq p{font-family:'EB Garamond',serif;font-style:italic;color:rgba(255,255,255,.3);font-size:16px;line-height:1.75;margin:0}
+
+/* CTA */
+.cta{padding:140px 48px;text-align:center}
+.cta h2{font-family:'EB Garamond',serif;font-size:38px;font-weight:500;max-width:520px;margin:0 auto 12px;line-height:1.2}
+.cta p{font-size:12px;color:rgba(255,255,255,.15);max-width:380px;margin:0 auto 28px;line-height:1.75}
+.cta a{display:inline-block;border:1px solid rgba(201,168,76,.2);color:#C9A84C;padding:12px 40px;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .3s}
+.cta a:hover{background:#C9A84C;color:#050607}
+
+footer{border-top:1px solid rgba(255,255,255,.02);padding:24px 48px;display:flex;justify-content:space-between;align-items:center}
+.fl{font-family:'EB Garamond',serif;font-size:14px;font-weight:800;color:rgba(201,168,76,.25);letter-spacing:5px}
+.fm{font-size:9px;color:rgba(255,255,255,.08);letter-spacing:.5px}
+.ff{display:flex;gap:16px}
+.ff a{font-size:9px;color:rgba(255,255,255,.08);text-decoration:none;transition:color .3s}
+.ff a:hover{color:#C9A84C}
+
+.rv{opacity:0;transform:translateY(20px);transition:all .7s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+
+@media(max-width:900px){
+nav{padding:0 20px}.nr a:not(.ct){display:none}
+.hero h1{font-size:34px}
+.stmt-t{font-size:30px}
+.disc,.out,.fnd,.cta,.orb-sec{padding:80px 20px}
+.ex-l{width:auto;display:block;margin-bottom:4px}.ex-tr{flex-wrap:wrap;gap:8px}.ex-txt{padding-left:0}
+.ow{width:300px;height:300px}.nd-c{width:28px;height:28px;font-size:7px}.nd-l{font-size:7px;max-width:50px}
+.r1{width:110px;height:110px}.r2{width:180px;height:180px}.r3{width:250px;height:250px}
+.out-grid{grid-template-columns:1fr}
+.nums-i{flex-wrap:wrap;gap:20px}.nm-i{min-width:45%}
+.fnd-g{grid-template-columns:1fr}
+footer{flex-direction:column;gap:8px;text-align:center;padding:16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="file:///C:/Users/Nbo6y/Downloads/hailo-website-v7_1.html#" class="nl">HAILO</a>
+<div class="nr">
+<a href="file:///C:/Users/Nbo6y/Downloads/hailo-website-v7_1.html#disc">Discover</a>
+<a href="file:///C:/Users/Nbo6y/Downloads/hailo-website-v7_1.html#orb">Connected</a>
+<a href="file:///C:/Users/Nbo6y/Downloads/hailo-website-v7_1.html#fnd">Founder</a>
+<a href="mailto:founder@hailoapp.com" class="ct">Get In Touch</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-g"></div>
+<h1>
+<span class="ln">Hospitality was built on</span>
+<span class="ln">human connection.</span>
+<span class="ln"><em>The technology never was.</em></span>
+<span class="ln"><em>We changed that.</em></span>
+</h1>
+<div class="hero-sub">Hotel Operations · Management · Corporate · Airlines · Card Programmes · Concierge · Careers</div>
+<div class="hero-cta"><a href="file:///C:/Users/Nbo6y/Downloads/hailo-website-v7_1.html#disc">Discover HAILO</a></div>
+<div class="scr"></div>
+</section>
+
+<div class="dv"></div>
+
+<section class="stmt rv v">
+<div class="stmt-t">Every party involved in a hotel stay operates in isolation. Different systems. Different data. <em>Same broken experience.</em></div>
+</section>
+
+<div class="dv"></div>
+
+<section class="disc" id="disc">
+<div class="disc-hdr rv v">
+<div class="disc-sl">The Disconnect</div>
+<div class="disc-h">Six disconnected worlds. One industry.</div>
+</div>
+<div class="ex-item">
+<div class="ex-tr"><div class="ex-l">Hotel Operations</div><div class="ex-t">Every department serving the same guest. None sharing what they know.</div><div class="ex-a">+</div></div>
+<div class="ex-bd"><div class="ex-txt">Front desk, housekeeping, F&amp;B, spa, engineering, concierge, valet, security. All operating on separate systems. The guest repeats themselves at every touchpoint because no one department can see what the others already know.</div></div>
+</div>
+<div class="ex-item">
+<div class="ex-tr"><div class="ex-l">Management</div><div class="ex-t">Decisions made on narratives. Not on what actually happened.</div><div class="ex-a">+</div></div>
+<div class="ex-bd"><div class="ex-txt">Each department presents its version. Patterns buried. Problems repeated. The truth reaches leadership too late to change anything. No live visibility into what is happening right now.</div></div>
+</div>
+<div class="ex-item">
+<div class="ex-tr"><div class="ex-l">Corporate Clients</div><div class="ex-t">Bookings by email. Problems discovered weeks later.</div><div class="ex-a">+</div></div>
+<div class="ex-bd"><div class="ex-txt">Travel managers coordinate through email chains and PDF attachments. Dietary requirements lost between departments. Billing disputes after every trip. No visibility into guest satisfaction during the stay.</div></div>
+</div>
+<div class="ex-item">
+<div class="ex-tr"><div class="ex-l">Airlines</div><div class="ex-t">Partner hotel quality invisible until a complaint letter arrives.</div><div class="ex-a">+</div></div>
+<div class="ex-bd"><div class="ex-txt">Premium passengers stay at recommended properties. Quality drops. The airline learns about it months later. No mechanism to monitor what their most valuable customers actually experience.</div></div>
+</div>
+<div class="ex-item">
+<div class="ex-tr"><div class="ex-l">Card Programmes</div><div class="ex-t">Benefits promised to millions. Delivery verified for none.</div><div class="ex-a">+</div></div>
+<div class="ex-bd"><div class="ex-txt">Amex Platinum, Visa Infinite, Mastercard World Elite. Five benefits per stay. No system confirms whether any were delivered. Disputes follow. Cardholder trust erodes quietly.</div></div>
+</div>
+<div class="ex-item">
+<div class="ex-tr"><div class="ex-l">Concierge &amp; Travel</div><div class="ex-t">Premium service delivered through phone calls and emails.</div><div class="ex-a">+</div></div>
+<div class="ex-bd"><div class="ex-txt">Lifestyle managers coordinate each stay manually. Calling hotels, emailing preferences, following up mid-stay. What should scale effortlessly requires enormous headcount.</div></div>
+</div>
+</section>
+
+<div class="dv"></div>
+
+<section class="stmt rv v">
+<div class="stmt-t">HAILO is the communication layer that <em>connects all of them.</em> Real time. One platform. Always on.</div>
+</section>
+
+<div class="dv"></div>
+
+<section class="orb-sec" id="orb">
+<div class="disc-sl rv v">One Platform</div>
+<h2 class="rv v">Every party. Every moment. <em>Connected.</em></h2>
+<div class="ow rv v" id="orbEl">
+<div class="rg r1"></div><div class="rg r2"></div><div class="rg r3"></div>
+<div class="oc"><div class="oci"><span>HAILO</span></div></div>
+<div class="ol" style="width: 198px; transform: rotate(0deg);"><div class="oli"></div></div><div class="nd" style="left: 501px; top: 254px;"><div class="nd-c">GU</div><div class="nd-l">Guests</div></div><div class="ol" style="width: 198px; transform: rotate(51deg);"><div class="oli"></div></div><div class="nd" style="left: 411.296px; top: 442.069px;"><div class="nd-c">HO</div><div class="nd-l">Hotel Ops</div></div><div class="ol" style="width: 198px; transform: rotate(103deg);"><div class="oli"></div></div><div class="nd" style="left: 204.562px; top: 489.798px;"><div class="nd-c">MG</div><div class="nd-l">Management</div></div><div class="ol" style="width: 198px; transform: rotate(154deg);"><div class="oli"></div></div><div class="nd" style="left: 41.4918px; top: 360.086px;"><div class="nd-c">CO</div><div class="nd-l">Corporate</div></div><div class="ol" style="width: 198px; transform: rotate(206deg);"><div class="oli"></div></div><div class="nd" style="left: 41.4918px; top: 147.914px;"><div class="nd-c">AL</div><div class="nd-l">Airlines</div></div><div class="ol" style="width: 198px; transform: rotate(257deg);"><div class="oli"></div></div><div class="nd" style="left: 204.562px; top: 18.2024px;"><div class="nd-c">CP</div><div class="nd-l">Card Prog.</div></div><div class="ol" style="width: 198px; transform: rotate(309deg);"><div class="oli"></div></div><div class="nd" style="left: 411.296px; top: 65.9307px;"><div class="nd-c">CN</div><div class="nd-l">Concierge</div></div><div class="pt" style="left: 356.315px; top: 185.759px; opacity: 0.5;"></div><div class="pt" style="left: 249.261px; top: 265.008px; opacity: 0.5;"></div></div>
+</section>
+
+<div class="dv"></div>
+
+<section class="out rv v">
+<div class="disc-sl">What Changes</div>
+<h2>When communication connects, everything shifts.</h2>
+<div class="out-grid">
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Guests known everywhere, remembered always</div><div class="out-p">One profile across every HAILO hotel. Preferences travel permanently.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Hotel teams serve with full context</div><div class="out-p">Every department sees the complete guest picture before they act.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Management sees live, unfiltered truth</div><div class="out-p">Real-time feeds. Interventions in seconds. Evidence, not narratives.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Corporates book, monitor, and report instantly</div><div class="out-p">Smart billing. Live alerts. Post-stay reports in one message.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Airlines see partner quality for the first time</div><div class="out-p">Live dashboards. Alerts when passengers are underserved.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Every card benefit tracked and verified</div><div class="out-p">Amex, Visa, Mastercard. Automatic delivery reporting.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Concierge companies scale without headcount</div><div class="out-p">200 clients managed with the effort that used to require 50.</div></div></div>
+<div class="out-i"><div class="out-d"></div><div><div class="out-h">Careers verified by guests. Portable forever.</div><div class="out-p">One-tap applications. Loyal guests follow you when you move.</div></div></div>
+</div>
+</section>
+
+<section class="nums">
+<div class="nums-i">
+<div class="nm-i rv v"><div class="nm-v" data-c="8">8</div><div class="nm-l">Connected parties</div></div>
+<div class="nm-i rv v"><div class="nm-v" data-c="94">94%</div><div class="nm-l">Feedback completion</div></div>
+<div class="nm-i rv v"><div class="nm-v">∞</div><div class="nm-l">Career preservation</div></div>
+<div class="nm-i rv v"><div class="nm-v" data-c="80">80%</div><div class="nm-l">Cost reduction</div></div>
+</div>
+</section>
+
+<section class="fnd" id="fnd">
+<div class="fnd-g">
+<div class="fc rv v">
+<div class="fav">FS</div>
+<div class="fnm">Farouk Saleh</div>
+<div class="frl">Founder &amp; CEO</div>
+<div class="fbi">15 years across hotel operations. Every department. Every broken connection. One conclusion.</div>
+</div>
+<div class="ft">
+<div class="disc-sl rv v">The Founder</div>
+<h2 class="rv v">Sharp eyes across every corner of hotel operations. One conclusion nobody else reached.</h2>
+<p class="rv v">15 years inside hotels. Not in one role. Across the full operation. Enough to see that every party in hospitality suffers from the same invisible problem: disconnected communication. Guests, staff, management, corporate clients, airlines, card programmes. All making decisions without the full picture.</p>
+<p class="rv v">The technology that existed was built by people who had never operated a hotel. Single-function systems. Sold as solutions. Producing nothing that connects the people who need to be connected. HAILO is the communication layer that should have existed from the beginning.</p>
+<div class="fq rv v"><p>The industry does not need another app. It needs everyone to finally communicate. That is what HAILO is.</p></div>
+</div>
+</div>
+</section>
+
+<div class="dv"></div>
+
+<section class="cta">
+<h2 class="rv v">If you touch hospitality, this was built for you.</h2>
+<p class="rv v">Early access opening for select partners.</p>
+<a href="mailto:founder@hailoapp.com" class="rv v">Get In Touch</a>
+</section>
+
+<footer>
+<div class="fl">HAILO</div>
+<div class="fm">Hospitality AI Live Operations · Abu Dhabi, UAE · 2026</div>
+<div class="ff">
+<a href="https://www.linkedin.com/in/farouk-saleh-15632579" target="_blank">LinkedIn</a>
+<a href="mailto:founder@hailoapp.com">Contact</a>
+</div>
+</footer>
+
+<script>
+var obs=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting)i.target.classList.add('v')})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
+
+document.querySelectorAll('.ex-tr').forEach(function(tr){
+tr.addEventListener('click',function(){
+var item=tr.parentElement,was=item.classList.contains('open');
+document.querySelectorAll('.ex-item').forEach(function(i){i.classList.remove('open')});
+if(!was)item.classList.add('open');
+});
+});
+
+var counted=false;
+var co=new IntersectionObserver(function(e){if(e[0].isIntersecting&&!counted){counted=true;
+document.querySelectorAll('[data-c]').forEach(function(el){
+var t=parseInt(el.getAttribute('data-c')),c=0,s=Math.ceil(t/28);
+var iv=setInterval(function(){c+=s;if(c>=t){c=t;clearInterval(iv)}
+el.textContent=c+(t>10?'%':'');},30);});}},{threshold:.3});
+co.observe(document.querySelector('.nums'));
+
+var nodes=[
+{l:'Guests',i:'GU',a:0},{l:'Hotel Ops',i:'HO',a:51},{l:'Management',i:'MG',a:103},
+{l:'Corporate',i:'CO',a:154},{l:'Airlines',i:'AL',a:206},{l:'Card Prog.',i:'CP',a:257},
+{l:'Concierge',i:'CN',a:309}
+];
+var o=document.getElementById('orbEl'),w=o.offsetWidth,h=o.offsetHeight,cx=w/2,cy=h/2,rd=Math.min(cx,cy)-38;
+nodes.forEach(function(n){
+var r=n.a*Math.PI/180,x=cx+rd*Math.cos(r),y=cy+rd*Math.sin(r);
+var ln=document.createElement('div');ln.className='ol';ln.style.width=(rd-44)+'px';ln.style.transform='rotate('+n.a+'deg)';
+ln.innerHTML='<div class="oli"></div>';o.appendChild(ln);
+var nd=document.createElement('div');nd.className='nd';nd.style.left=(x-21)+'px';nd.style.top=(y-26)+'px';
+nd.innerHTML='<div class="nd-c">'+n.i+'</div><div class="nd-l">'+n.l+'</div>';o.appendChild(nd);
+});
+function sp(){
+var n=nodes[Math.floor(Math.random()*nodes.length)],r=n.a*Math.PI/180;
+var p=document.createElement('div');p.className='pt';p.style.left=cx+'px';p.style.top=cy+'px';o.appendChild(p);
+var d=rd-44,dur=900+Math.random()*400,st=performance.now();
+function f(now){var t=Math.min((now-st)/dur,1),e=t<.5?2*t*t:(1-Math.pow(-2*t+2,2)/2);
+var dd=e*d;p.style.left=(cx+dd*Math.cos(r))+'px';p.style.top=(cy+dd*Math.sin(r))+'px';
+p.style.opacity=t<.08?t*12:t>.85?(1-t)*6:0.5;
+if(t<1)requestAnimationFrame(f);else p.remove();}requestAnimationFrame(f);}
+setInterval(sp,350);
+</script>
+
+
+</body></html>
