@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)file:///C:/Users/Nbo6y/Downloads/hailo-website-final_4.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAILO — Hospitality AI Live Operations</title>
+<link href="./HAILO — Hospitality AI Live Operations_files/css2" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:#fff;border-bottom:1px solid #f0ede6}
+.nav-top{padding:0 40px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.nl{font-family:'EB Garamond',serif;font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:5px;text-decoration:none;flex-shrink:0}
+.nav-items{display:flex;align-items:center;gap:6px}
+.nav-btn{font-size:10px;font-weight:500;color:#999;padding:6px 10px;border-radius:3px;cursor:pointer;letter-spacing:.2px;transition:all .25s;user-select:none;white-space:nowrap}
+.nav-btn:hover{color:#1a1a1a}
+.nav-btn.active{color:#B8972F;font-weight:600}
+.nav-cta{font-size:10px;font-weight:600;color:#fff;background:#1a1a1a;padding:7px 18px;border-radius:3px;text-decoration:none;letter-spacing:.3px;transition:all .3s;margin-left:6px;white-space:nowrap}
+.nav-cta:hover{background:#B8972F}
+
+/* MOBILE MENU */
+.mob-toggle{display:none;width:24px;height:24px;cursor:pointer;flex-direction:column;justify-content:center;gap:4px}
+.mob-toggle span{display:block;width:18px;height:1.5px;background:#1a1a1a;transition:all .3s}
+
+/* DROPDOWN PANEL */
+.dropdown{position:fixed;top:52px;left:0;right:0;z-index:250;background:#fff;border-bottom:1px solid #f0ede6;max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,1,.36,1);box-shadow:0 12px 40px rgba(0,0,0,.04)}
+.dropdown.open{max-height:420px}
+.drop-inner{padding:48px 40px 56px;display:flex;gap:60px;max-width:960px}
+.drop-left{flex:1.1}
+.drop-right{flex:1;padding-top:4px}
+.drop-left h2{font-family:'EB Garamond',serif;font-size:28px;font-weight:500;line-height:1.35;color:#1a1a1a}
+.drop-left h2 em{font-style:italic;color:#B8972F}
+.drop-right p{font-size:14px;color:#888;line-height:1.85}
+.drop-tag{font-size:9px;font-weight:600;color:#B8972F;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+
+/* OVERLAY */
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(0,0,0,.08);opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.show{opacity:1;pointer-events:auto}
+
+/* HERO */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 48px;padding-top:52px}
+.hero h1{font-family:'EB Garamond',serif;font-size:50px;font-weight:500;line-height:1.2;max-width:640px}
+.hero h1 em{font-style:italic;color:#B8972F}
+.hero h1 .ln{display:block;opacity:0;transform:translateY(16px);animation:up .6s forwards}
+.hero h1 .ln:nth-child(2){animation-delay:.12s}
+.hero h1 .ln:nth-child(3){animation-delay:.24s}
+@keyframes up{to{opacity:1;transform:none}}
+.hero-p{font-size:15px;color:#aaa;margin-top:28px;max-width:400px;line-height:1.8;opacity:0;animation:fi .5s .5s forwards}
+.hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fi .5s 1s forwards}
+.hero-scroll span{font-size:8px;color:#ccc;letter-spacing:1.5px}
+.hero-scroll .arrow{width:14px;height:14px;border-right:1.5px solid #ccc;border-bottom:1.5px solid #ccc;transform:rotate(45deg);animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(4px)}}
+@keyframes fi{to{opacity:1}}
+
+/* MISSION */
+.mission{min-height:80vh;display:flex;flex-direction:column;justify-content:center;padding:80px 48px;border-top:1px solid #f5f3ef}
+.mission h2{font-family:'EB Garamond',serif;font-size:34px;font-weight:500;line-height:1.35;max-width:620px;margin-bottom:20px}
+.mission h2 em{font-style:italic;color:#B8972F}
+.mission-p{font-size:15px;color:#999;line-height:1.85;max-width:480px}
+
+/* BAND */
+.band{padding:28px 0;overflow:hidden;border-top:1px solid #f5f3ef;border-bottom:1px solid #f5f3ef}
+.bt{display:flex;gap:32px;animation:sl 55s linear infinite;white-space:nowrap}
+.bi{font-size:11px;color:#ddd;font-weight:500;letter-spacing:1px;flex-shrink:0}
+@keyframes sl{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* CTA */
+.cta{padding:140px 48px;text-align:center}
+.cta h2{font-family:'EB Garamond',serif;font-size:34px;font-weight:500;max-width:420px;margin:0 auto 20px;line-height:1.3}
+.cta h2 em{font-style:italic;color:#B8972F}
+.cta a{display:inline-block;background:#1a1a1a;color:#fff;padding:13px 40px;font-size:12px;font-weight:600;letter-spacing:.8px;text-decoration:none;border-radius:3px;transition:all .3s}
+.cta a:hover{background:#B8972F}
+
+footer{border-top:1px solid #f0ede6;padding:24px 40px;display:flex;justify-content:space-between;align-items:center}
+.fl{font-family:'EB Garamond',serif;font-size:13px;font-weight:800;color:#ddd;letter-spacing:5px}
+.fm{font-size:9px;color:#ccc}
+.fr a{font-size:9px;color:#ccc;text-decoration:none;margin-left:14px;transition:color .3s}
+.fr a:hover{color:#B8972F}
+
+@media(max-width:900px){
+.nav-items .nav-btn{display:none}
+.mob-toggle{display:flex}
+.nav-top{padding:0 24px}
+.hero{padding:0 24px;padding-top:52px}.hero h1{font-size:32px}
+.mission{padding:60px 24px}.mission h2{font-size:26px}
+.cta{padding:80px 24px}.cta h2{font-size:26px}
+.drop-inner{flex-direction:column;gap:20px;padding:32px 24px 40px}
+footer{flex-direction:column;gap:8px;text-align:center;padding:16px 24px}
+}
+
+/* MOBILE MENU PANEL */
+.mob-menu{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;z-index:280;background:#fff;padding:32px 24px;flex-direction:column;gap:4px;overflow-y:auto}
+.mob-menu.show{display:flex}
+.mob-menu-item{font-family:'EB Garamond',serif;font-size:22px;font-weight:500;color:#1a1a1a;padding:14px 0;border-bottom:1px solid #f5f3ef;cursor:pointer}
+.mob-menu-item:hover{color:#B8972F}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-top">
+<a href="file:///C:/Users/Nbo6y/Downloads/hailo-website-final_4.html#" class="nl" onclick="closeAll();return false">HAILO</a>
+<div class="nav-items">
+<div class="nav-btn" data-panel="guests">Guests</div>
+<div class="nav-btn" data-panel="hotels">Hotels</div>
+<div class="nav-btn" data-panel="careers">Careers</div>
+<div class="nav-btn" data-panel="corporate">Corporate</div>
+<div class="nav-btn" data-panel="airlines">Airlines</div>
+<div class="nav-btn" data-panel="cards">Card Programmes</div>
+<div class="nav-btn" data-panel="concierge">Concierge</div>
+<div class="nav-btn" data-panel="events">Events</div>
+<div class="nav-btn" data-panel="tours">Tour Operators</div>
+<div class="nav-btn" data-panel="health">Health &amp; Wellness</div>
+<a href="mailto:founder@hailoapp.com" class="nav-cta">Get In Touch</a>
+</div>
+<div class="mob-toggle" onclick="toggleMob()">
+<span></span><span></span><span></span>
+</div>
+</div>
+</nav>
+
+<!-- DROPDOWN PANELS -->
+<div class="dropdown" id="guests">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Guests</div><h2>Think about what happens when you check into a hotel today. They ask your name, your preferences, whether you have stayed before. <em>Even if the answer is yes, twelve times.</em></h2></div>
+<div class="drop-right"><p>HAILO gives every guest a single profile that lives across every hotel in the world. Your history, your preferences, the people who made your stay special. All travel with you permanently. After a few stays, you browse hotels on HAILO, see verified scores from real guests, and book direct. The relationship with every hotel you visit never resets again.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="hotels">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Hotels</div><h2>A general manager walks in and knows exactly what is happening in every corner of their hotel. <em>Because HAILO already showed them.</em></h2></div>
+<div class="drop-right"><p>Live feeds by department. Real guest sentiment across every interaction. Requests routed to the right person in seconds. Which teams are thriving, which need attention. The information arrives before anyone needs to ask for it. Decisions are made on what is actually happening, not on what was summarised over coffee.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="careers">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Careers</div><h2>There are people working in hotels right now who are extraordinary at what they do. Guests remember them by name. <em>The industry has given them no way to prove it.</em></h2></div>
+<div class="drop-right"><p>HAILO builds a verified career portfolio from real guest interactions. Every positive moment, every recognition, every name request becomes part of a permanent record that belongs to the person who earned it. When they move to a new hotel, loyal guests are notified. A hospitality career is finally something you can see, carry with you, and build on.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="corporate">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Corporate Travel</div><h2>A travel manager books rooms for twenty colleagues and watches their entire trip unfold. <em>What took days of emails takes three messages.</em></h2></div>
+<div class="drop-right"><p>Smart billing applied automatically. Dietary requirements pushed to every restaurant the moment the booking is confirmed. If something goes wrong during the stay, the alert arrives immediately. The post-stay report downloads in one message. The travel manager sees everything while it is happening, not in an expense report weeks later.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="airlines">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Airlines</div><h2>An airline sends its most valued passengers to a partner hotel. <em>For the first time, they know exactly what happens next.</em></h2></div>
+<div class="drop-right"><p>Quality dashboards across every partner property in real time. Alerts when a premium passenger is underserved. Route-level analysis showing which flights produce the most fatigued guests who need the most attention on arrival. Partnership decisions driven by verified data instead of complaint letters that arrive months too late.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="cards">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Card Programmes</div><h2>Amex, Visa, and Mastercard promise benefits with every stay. <em>HAILO confirms that every single one was delivered.</em></h2></div>
+<div class="drop-right"><p>Room upgrades, early check-in, late checkout, breakfast, experience credits. Every benefit tracked, timestamped at the moment of delivery, and reported automatically. If something was promised and not provided, the programme knows within hours, not after a dispute is filed months later. Cardholder trust protected in real time.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="concierge">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Concierge &amp; Travel</div><h2>A concierge company looks after hundreds of elite clients across the world. <em>With HAILO, the care scales without losing the personal touch.</em></h2></div>
+<div class="drop-right"><p>Every client's preferences arrive at every hotel before they do. Live monitoring across every active stay. If something goes wrong, the alert reaches the right person in seconds. One lifestyle manager can oversee what used to require an entire team of coordinators making phone calls around the clock.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="events">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Events</div><h2>A wedding planner coordinates with five hotel departments for one evening. <em>HAILO connects them all in a single conversation.</em></h2></div>
+<div class="drop-right"><p>Conferences, galas, corporate retreats, celebrations. Every event involves the kitchen, the banquet team, AV, housekeeping, and guest relations working at the same time. HAILO gives the event planner a live view across every department involved. Requests flow to the right people instantly. Changes reach everyone in seconds. The coordination that used to take dozens of calls happens in one connected thread.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="tours">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Tour Operators</div><h2>Forty travellers arrive at a hotel on the same afternoon. Each with different needs. <em>The hotel sees every single one of them clearly.</em></h2></div>
+<div class="drop-right"><p>Group travel has always meant generic service. Everyone gets the same room, the same welcome, the same buffet. HAILO gives the tour operator a way to share individual preferences for every guest in the group before they arrive. Dietary needs, accessibility requirements, room preferences, celebration dates. The hotel receives it all automatically and serves forty individuals, not one group number.</p></div>
+</div>
+</div>
+
+<div class="dropdown" id="health">
+<div class="drop-inner">
+<div class="drop-left"><div class="drop-tag">Health &amp; Wellness</div><h2>A guest travels across the world for medical treatment. Their hotel stay is part of their recovery. <em>HAILO makes sure the hotel understands that.</em></h2></div>
+<div class="drop-right"><p>Medical tourism is growing rapidly across the UAE and MENA region. Guests recovering from procedures need specific room configurations, carefully managed dietary requirements, accessibility accommodations, and a level of care that goes beyond standard hospitality. HAILO allows the medical coordinator to communicate directly with the hotel so that every detail of the guest's wellbeing is handled with precision from the moment they arrive.</p></div>
+</div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" onclick="closeAll()"></div>
+
+<!-- HERO -->
+<section class="hero">
+<h1>
+<span class="ln">Every person in hospitality</span>
+<span class="ln">deserves to be seen.</span>
+<span class="ln"><em>Now they can be.</em></span>
+</h1>
+<p class="hero-p">HAILO connects the entire hospitality ecosystem in real time. One platform for guests, hotel teams, corporates, airlines, card programmes, concierge companies, event planners, tour operators, and health partners.</p>
+<div class="hero-scroll"><span>SCROLL</span><div class="arrow"></div></div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+<h2>Hospitality was built on human connection. The people who welcome you, who remember how you like your coffee, who make a place feel like it was waiting for you. <em>The technology that connects them has never existed. Until now.</em></h2>
+<p class="mission-p">HAILO is the communication layer the hospitality industry was always missing. Every party connected. Every interaction visible. Every career valued. Before the booking. During the stay. Long after checkout.</p>
+</section>
+
+<!-- BAND -->
+<div class="band">
+<div class="bt">
+<span class="bi">Guests</span><span class="bi">·</span>
+<span class="bi">Hotel Teams</span><span class="bi">·</span>
+<span class="bi">Management</span><span class="bi">·</span>
+<span class="bi">Corporate Travel</span><span class="bi">·</span>
+<span class="bi">Emirates</span><span class="bi">·</span>
+<span class="bi">Etihad</span><span class="bi">·</span>
+<span class="bi">Amex</span><span class="bi">·</span>
+<span class="bi">Visa</span><span class="bi">·</span>
+<span class="bi">Mastercard</span><span class="bi">·</span>
+<span class="bi">Concierge</span><span class="bi">·</span>
+<span class="bi">Careers</span><span class="bi">·</span>
+<span class="bi">Events</span><span class="bi">·</span>
+<span class="bi">Tour Operators</span><span class="bi">·</span>
+<span class="bi">Health &amp; Wellness</span><span class="bi">·</span>
+<span class="bi">Guests</span><span class="bi">·</span>
+<span class="bi">Hotel Teams</span><span class="bi">·</span>
+<span class="bi">Management</span><span class="bi">·</span>
+<span class="bi">Corporate Travel</span><span class="bi">·</span>
+<span class="bi">Emirates</span><span class="bi">·</span>
+<span class="bi">Etihad</span><span class="bi">·</span>
+<span class="bi">Amex</span><span class="bi">·</span>
+<span class="bi">Visa</span><span class="bi">·</span>
+<span class="bi">Mastercard</span><span class="bi">·</span>
+<span class="bi">Concierge</span><span class="bi">·</span>
+<span class="bi">Careers</span><span class="bi">·</span>
+<span class="bi">Events</span><span class="bi">·</span>
+<span class="bi">Tour Operators</span><span class="bi">·</span>
+<span class="bi">Health &amp; Wellness</span><span class="bi">·</span>
+</div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+<h2>If hospitality is your world, <em>this was built for you.</em></h2>
+<a href="mailto:founder@hailoapp.com">Get In Touch</a>
+</section>
+
+<footer>
+<div class="fl">HAILO</div>
+<div class="fm">Hospitality AI Live Operations · Abu Dhabi, UAE · 2026</div>
+<div class="fr">
+<a href="https://www.linkedin.com/in/farouk-saleh-15632579" target="_blank">LinkedIn</a>
+<a href="mailto:founder@hailoapp.com">Contact</a>
+</div>
+</footer>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+<div class="mob-menu-item" onclick="openFromMob(&#39;guests&#39;)">Guests</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;hotels&#39;)">Hotels</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;careers&#39;)">Careers</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;corporate&#39;)">Corporate</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;airlines&#39;)">Airlines</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;cards&#39;)">Card Programmes</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;concierge&#39;)">Concierge</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;events&#39;)">Events</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;tours&#39;)">Tour Operators</div>
+<div class="mob-menu-item" onclick="openFromMob(&#39;health&#39;)">Health &amp; Wellness</div>
+<div style="padding-top:16px"><a href="mailto:founder@hailoapp.com" style="display:inline-block;background:#1a1a1a;color:#fff;padding:12px 32px;font-size:12px;font-weight:600;letter-spacing:.5px;text-decoration:none;border-radius:3px">Get In Touch</a></div>
+</div>
+
+<script>
+var btns=document.querySelectorAll('.nav-btn');
+var drops=document.querySelectorAll('.dropdown');
+var overlay=document.querySelector('.overlay');
+var current=null;
+
+btns.forEach(function(btn){
+btn.addEventListener('click',function(){
+var id=this.getAttribute('data-panel');
+if(current===id){closeAll();return}
+closeAll();
+current=id;
+document.getElementById(id).classList.add('open');
+overlay.classList.add('show');
+this.classList.add('active');
+})
+});
+
+function closeAll(){
+drops.forEach(function(d){d.classList.remove('open')});
+btns.forEach(function(b){b.classList.remove('active')});
+overlay.classList.remove('show');
+current=null;
+}
+
+function toggleMob(){
+document.getElementById('mobMenu').classList.toggle('show');
+}
+function openFromMob(id){
+document.getElementById('mobMenu').classList.remove('show');
+closeAll();
+current=id;
+document.getElementById(id).classList.add('open');
+overlay.classList.add('show');
+var btn=document.querySelector('[data-panel="'+id+'"]');
+if(btn)btn.classList.add('active');
+}
+</script>
+
+
+</body></html>
